@@ -62,6 +62,9 @@ body {
 .xdxd{
     color: red;
 }
+.fa-heart{
+    cursor:pointer;
+}
 
 .icons {
     display: flex;
