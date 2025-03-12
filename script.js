@@ -8,4 +8,13 @@ function updatePhoneClock() {
 }
 
 updatePhoneClock();
-setInterval(updateClock, 1000);
+setInterval(updatePhoneClock, 1000);
+
+document.addEventListener("DOMContentLoaded", function () {
+    const heartIcon = document.querySelectorAll(".fa-heart");  
+    for (let i = 0; i < heartIcon.length; i++) {
+        heartIcon[i].addEventListener("click", function () { 
+            heartIcon[i].classList.toggle("fa-solid");
+        })
+    }
+});
