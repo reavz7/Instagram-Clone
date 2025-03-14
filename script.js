@@ -17,4 +17,22 @@ document.addEventListener("DOMContentLoaded", function () {
             heartIcon[i].classList.toggle("fa-solid");
         })
     }
+
+    const heartOne = document.querySelector('.heart-one');
+    let likesCountElement = document.getElementById("likes-count-1");
+    let firstLikes = parseInt(likesCountElement.textContent);
+    let liked = false;
+
+    heartOne.addEventListener("click", () => {      
+        if (liked) {
+            firstLikes--;
+        }
+        else { 
+            firstLikes++;
+        }
+        likesCountElement.textContent = firstLikes;
+        liked = !liked
+
+    })
+
 });
