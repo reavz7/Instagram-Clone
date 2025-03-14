@@ -30,9 +30,11 @@ document.addEventListener("DOMContentLoaded", function () {
         else { 
             firstLikes++;
         }
-        likesCountElement.textContent = firstLikes;
         liked = !liked
+        likesCountElement.textContent = firstLikes;
 
     })
 
+
+        
 });
