@@ -278,6 +278,9 @@ body {
     margin-bottom: 6px;
     color: white;
 }
+.like-animation{
+    content: ;
+}
 
 .post-likes p {
     font-weight: 600;

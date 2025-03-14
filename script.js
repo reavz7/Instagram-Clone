@@ -35,6 +35,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
     })
 
+    const heartSecond = document.querySelector('.heart-second');
+    let likesCountElement2 = document.getElementById("likes-count-2");
+    let secondLikes = parseInt(likesCountElement2.textContent);
+    let liked2 = false;
 
-        
+    heartSecond.addEventListener("click", () => { 
+        if (liked2) {
+            secondLikes--;
+        }
+        else { 
+            secondLikes++;
+        }
+        liked2 = !liked2;
+        likesCountElement2.textContent = secondLikes;
+    })
+
+
 });
