@@ -12,7 +12,8 @@ setInterval(updatePhoneClock, 1000);
 
 document.addEventListener("DOMContentLoaded", function () {
     const heartIcons = document.querySelectorAll(".fa-heart");  
-    
+    const saveIcons = document.querySelectorAll(".fa-bookmark");
+    const saveWindow = document.querySelector(".save-window");  
     heartIcons.forEach(heart => {
         heart.addEventListener("click", function () { 
             this.classList.toggle("fa-solid"); // Zmiana stylu serca
@@ -30,4 +31,20 @@ document.addEventListener("DOMContentLoaded", function () {
             likesCountElement.textContent = likes; // Aktualizacja licznika
         });
     });
+
+    saveIcons.forEach(saveIcon => { 
+        saveIcon.addEventListener("click", function () { 
+            this.classList.toggle("fa-solid")
+            if (this.classList.contains("fa-solid")) {
+                saveWindow.classList.remove("hidden")
+                setTimeout(() => { 
+                    saveWindow.classList.add("hidden")
+                }, 1500)
+            }
+            else { 
+            }
+        })
+    })
+
+
 });

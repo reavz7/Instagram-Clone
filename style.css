@@ -278,9 +278,6 @@ body {
     margin-bottom: 6px;
     color: white;
 }
-.like-animation{
-    content: ;
-}
 
 .post-likes p {
     font-weight: 600;
@@ -467,7 +464,19 @@ body {
     color: #a8a8a8;
 }
 
-.relation-reply i {
+.relation-reply i { 
     margin-left: 10px;
     cursor: pointer;
+}   
+.hidden{    
+    display: none;
+}   
+.save-window{
+    background-color: rgb(221, 221, 221);
+    border-radius: 50px;
+    margin: 2rem;
+    padding: .6rem; 
+    position: absolute;
+    top: 80%;
+    left: 8%;
 }
