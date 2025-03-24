@@ -7,7 +7,7 @@ function updatePhoneClock() {
     document.getElementById('hourPhone').textContent = `${hour}:${minutes}`
 }
 
-updatePhoneClock();
+updatePhoneClock(); 
 setInterval(updatePhoneClock, 1000);
 
 document.addEventListener("DOMContentLoaded", function () {
