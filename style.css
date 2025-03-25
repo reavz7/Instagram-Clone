@@ -130,7 +130,7 @@ body {
     gap: 8px;
 }
 
-.instagram-logo i {
+.instagram-logo i { 
     font-size: 24px;
 }
 
@@ -150,15 +150,6 @@ body {
 }
 
 /* Stories */
-.emma-relation{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    translate: ();
-    width: 100%;
-    background-color: red;
-    height: 100%;
-}
 .instagram-relations {
     display: flex;
     padding: 0.5rem;
@@ -178,6 +169,7 @@ body {
     align-items: center;
     min-width: 70px;
     cursor: pointer;
+    position: relative;
 }
 
 .avatar img {
@@ -355,7 +347,7 @@ body {
     object-fit: cover;
 }
 
-/* RELATIONS SCREEN - FIXED FOR DEVICE CONTAINER */
+/* RELATIONS SCREEN - IMPROVED */
 .relation-screen {
     position: absolute;
     top: 0;
@@ -364,10 +356,15 @@ body {
     height: 100%;
     background-color: #000;
     z-index: 100;
-    display: flex;
+    display: none; /* Hidden by default, will be shown with JavaScript */
     flex-direction: column;
     color: white;
-    display: none; /* Hidden by default, will be shown with JavaScript */
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 .relation-header {
@@ -381,14 +378,32 @@ body {
 }
 
 .progress-segment {
-    height: 2px;
+    height: 3px;
     flex: 1;
     background-color: rgba(255, 255, 255, 0.3);
     border-radius: 2px;
+    position: relative;
+    overflow: hidden;
 }
 
 .progress-segment.active {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.progress-segment.active::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0%;
     background-color: white;
+    animation: progressAnimation 5s linear forwards;
+}
+
+@keyframes progressAnimation {
+    0% { width: 0%; }
+    100% { width: 100%; }
 }
 
 .relation-menu {
@@ -440,6 +455,7 @@ body {
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    position: relative;
 }
 
 .relation-image {
@@ -477,10 +493,12 @@ body {
     margin-left: 10px;
     cursor: pointer;
 }   
-.hidden{    
+
+.hidden {    
     display: none;
 }   
-.save-window{
+
+.save-window {
     background-color: rgb(221, 221, 221);
     border-radius: 50px;
     margin: 2rem;
@@ -488,4 +506,52 @@ body {
     position: absolute;
     top: 80%;
     left: 8%;
+    z-index: 200;
+    animation: fadeInOut 1.5s ease-in-out;
 }
+
+@keyframes fadeInOut {
+    0% { opacity: 0; transform: translateY(20px); }
+    20% { opacity: 1; transform: translateY(0); }
+    80% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(-20px); }
+}
+
+/* Reaction buttons for stories */
+.relation-reactions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.reaction-btn {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 8px 15px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.reaction-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Tap areas for story navigation */
+.tap-area {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    z-index: 5;
+}
+
+.tap-left {
+    left: 0;
+}
+
+.tap-right {
+    right: 0;
+}
+
